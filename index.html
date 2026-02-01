@@ -3,76 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Student Portfolio | AKANSHA PARLEY</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#00e6e6',
+            secondary: '#1f2937',
+            accent: '#a78bfa',
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     html { scroll-behavior: smooth; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
   </style>
 </head>
 
-<body class="bg-gray-950 text-gray-100 font-sans">
+<body class="bg-gray-950 text-gray-100 font-sans leading-relaxed">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur-sm shadow-xl">
+  <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#hero" class="text-xl font-bold text-primary">
+      Akansha Parley (Student)
+    </a>
+
+    <div class="hidden md:flex space-x-6 text-sm font-medium">
+      <a href="#about" class="hover:text-primary">About</a>
+      <a href="#education" class="hover:text-primary">Education</a>
+      <a href="#skills" class="hover:text-primary">Skills</a>
+      <a href="#assignments" class="hover:text-primary">Assignments</a>
+      <a href="#" class="px-3 py-1 bg-primary text-gray-950 rounded-full font-bold">
+        Download Resume
+      </a>
+    </div>
+
+    <button id="menu-button" class="md:hidden p-2 hover:bg-gray-800 rounded">
+      ☰
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+    <div class="flex flex-col items-center p-4 space-y-2">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#assignments">Assignments</a>
+    </div>
+  </div>
+</header>
+
+<main>
 
 <!-- HERO -->
-<section class="min-h-screen flex items-center justify-center text-center">
-  <div>
-    <h1 class="text-5xl font-bold text-cyan-400 mb-6">
-      My Academic Assignments
+<section id="hero" class="min-h-screen flex items-center justify-center text-center">
+  <div class="max-w-3xl px-4">
+    <p class="text-primary text-lg mb-3">Hello, I'm AKANSHA PARLEY</p>
+    <h1 class="text-5xl font-extrabold mb-6">
+      Aspiring Software Developer
     </h1>
+    <p class="text-gray-400 mb-8">
+      2nd Year B.Tech student (4th Semester) exploring Data Structures, C++ and Web Development.
+    </p>
+    <a href="#assignments" class="px-8 py-3 bg-primary text-gray-950 font-bold rounded-full">
+      View My Assignments
+    </a>
   </div>
 </section>
 
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-4xl font-bold text-center mb-12">Who I Am</h2>
 
-<!-- ASSIGNMENTS -->
-<section id="assignments" class="py-20 bg-gray-900">
-  <div class="max-w-5xl mx-auto px-4 space-y-16">
+    <div class="flex flex-col md:flex-row gap-10 items-center">
+      <div class="md:w-1/3 bg-gray-800 p-6 rounded-xl">
+        <img src="ak5.jpg"
+             onerror="this.src='https://placehold.co/400x400/1f2937/00e6e6?text=Student+Photo'"
+             class="rounded-xl mb-4 border-4 border-primary/50">
+        <h3 class="text-xl font-bold text-center">Akansha Parley</h3>
+        <p class="text-primary text-center text-sm">
+          B.Tech | CSE (AIDS)
+        </p>
+      </div>
 
-    <!-- Assignment 1 PDF -->
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <h2 class="text-2xl font-bold text-cyan-400 mb-4">
-        Assignment 1 (PDF)
-      </h2>
-
-      <embed
-        src="assignment1.pdf"
-        type="application/pdf"
-        width="100%"
-        height="600px"
-        class="rounded border"
-      >
-
-      <a href="assignment1.pdf"
-         download
-         class="inline-block mt-4 px-6 py-2 bg-cyan-400 text-black font-bold rounded-full">
-        Download PDF
-      </a>
+      <div class="md:w-2/3 text-gray-300 space-y-4">
+        <p>
+          I am pursuing B.Tech in Computer Science with specialization in
+          Artificial Intelligence and Data Science at Graphic Era Hill University.
+          I enjoy learning web development and modern technologies.
+        </p>
+        <p class="italic border-l-4 border-primary pl-4">
+          "Committed to learning, focused on fundamentals, and ready to code the future."
+        </p>
+      </div>
     </div>
-
-
-    <!-- Assignment 2 PPT -->
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <h2 class="text-2xl font-bold text-purple-400 mb-4">
-        Assignment 2 (PPT)
-      </h2>
-
-      <p class="text-gray-400 mb-4">
-        PPT files can't preview inside browser. Please download.
-      </p>
-
-      <a href="ai-spectrum.pptx"
-         download
-         class="inline-block px-6 py-2 bg-purple-400 text-black font-bold rounded-full">
-        Download PPT
-      </a>
-    </div>
-
   </div>
 </section>
+
+<!-- ASSIGNMENTS (PDFs) -->
+<section id="assignments" class="py-20 bg-gray-950">
+  <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+  <h3 class="text-2xl font-bold text-primary mb-4">Assignment 1</h3>
+
+  <embed src="Scan document2026-02-01 18-50-44.pdf"
+         type="application/pdf"
+         width="100%"
+         height="600px"
+         class="w-full h-[600px] rounded border border-gray-700">
+
+  <a href="Scan document2026-02-01 18-50-44.pdf" download
+     class="inline-block mt-4 px-6 py-2 bg-primary text-gray-950 font-bold rounded-full">
+    Download PDF
+  </a>
+</div>
+
+
+   <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+  <h3 class="text-2xl font-bold text-primary mb-4">
+    Assignment 2 – AI Spectrum
+  </h3>
+
+  <a href="AI SPECTRUM.pptx" download
+     class="inline-block mt-4 px-6 py-2 bg-primary text-gray-950 font-bold rounded-full">
+    Download PPT
+  </a>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4 max-w-4xl text-center">
+    <h2 class="text-4xl font-bold mb-6">Education</h2>
+    <p class="text-gray-400">
+      B.Tech – Computer Science (AI & Data Science) <br>
+      2024 – 2028 (Expected) <br>
+      Currently in 4th Semester
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 bg-gray-950">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-gray-800 p-6 rounded-xl">C / C++</div>
+      <div class="bg-gray-800 p-6 rounded-xl">DSA</div>
+      <div class="bg-gray-800 p-6 rounded-xl">Python</div>
+      <div class="bg-gray-800 p-6 rounded-xl">HTML / CSS / JS</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-gray-950 border-t border-gray-800 py-6 text-center text-gray-500">
+  <p>© Akansha Parley | Student Portfolio</p>
+</footer>
+
+<script>
+  const btn = document.getElementById("menu-button");
+  const menu = document.getElementById("mobile-menu");
+  btn.onclick = () => menu.classList.toggle("hidden");
+</script>
 
 </body>
-</html>
+</html> 
+
 
 
