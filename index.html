@@ -1,397 +1,193 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio | AKANSHA PARLEY</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        // DEEP BLUE/ELECTRIC CYAN COLOR SCHEME (High Contrast)
-                        'primary': '#00e6e6', // Electric Cyan (High contrast accent)
-                        'secondary': '#1f2937', // Gray 800
-                        'accent': '#a78bfa', // Violet 400 (Secondary interactive color)
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Smooth scrolling for navigation */
-        html { scroll-behavior: smooth; }
-        /* Custom scrollbar style for subtle look */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; } /* Darker track */
-        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
-        
-        /* Custom video placeholder style: Ensures 16:9 aspect ratio for embeds */
-        .video-placeholder {
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            position: relative;
-            background-color: #374151; /* Gray 700 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portfolio | AKANSHA PARLEY</title>
 
-        .video-placeholder iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#00e6e6',
+            secondary: '#1f2937',
+            accent: '#a78bfa',
+          }
         }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+  </style>
 </head>
 
 <body class="bg-gray-950 text-gray-100 font-sans leading-relaxed">
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur-sm shadow-xl shadow-gray-950/40">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#hero" class="text-xl font-bold text-primary tracking-wider transition hover:text-accent">Akansha Parley (Student)</a>
-            
-            <!-- Desktop Navigation Links -->
-            <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#about" class="hover:text-primary transition">About</a>
-                <a href="#education" class="hover:text-primary transition">Education</a>
-                <a href="#skills" class="hover:text-primary transition">Skills</a>
-                <a href="#assignments" class="hover:text-primary transition">Assignments</a>
-                <!-- Updated Call to Action Button -->
-                <a href="#" class="px-3 py-1 bg-primary text-gray-950 rounded-full font-bold hover:bg-opacity-80 transition shadow-md" aria-label="Download Resume">Download Resume</a>
-            </div>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur-sm shadow-xl">
+  <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#hero" class="text-xl font-bold text-primary">
+      Akansha Parley (Student)
+    </a>
 
-            <!-- Mobile Menu Button (Hamburger Icon) -->
-            <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-800 transition" aria-label="Toggle navigation menu">
-                <!-- SVG Hamburger Icon (Lucide Menu) -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            </button>
-        </nav>
-        
-        <!-- Mobile Menu (Hidden by Default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
-            <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-                <a href="#about" class="block w-full text-center py-2 text-base font-medium hover:bg-gray-700 rounded-lg transition">About</a>
-                <a href="#education" class="block w-full text-center py-2 text-base font-medium hover:bg-gray-700 rounded-lg transition">Education</a>
-                <a href="#skills" class="block w-full text-center py-2 text-base font-medium hover:bg-gray-700 rounded-lg transition">Skills</a>
-                <a href="#assignments" class="block w-full text-center py-2 text-base font-medium hover:bg-gray-700 rounded-lg transition">Assignments</a>
-                <!-- Updated Call to Action Button -->
-                <a href="#" class="block w-3/4 text-center mt-2 py-2 text-base font-medium bg-primary text-gray-950 rounded-full hover:bg-opacity-80 transition" aria-label="Download Resume">Download Resume</a>
-            </div>
-        </div>
-    </header>
+    <div class="hidden md:flex space-x-6 text-sm font-medium">
+      <a href="#about" class="hover:text-primary">About</a>
+      <a href="#education" class="hover:text-primary">Education</a>
+      <a href="#skills" class="hover:text-primary">Skills</a>
+      <a href="#assignments" class="hover:text-primary">Assignments</a>
+      <a href="#" class="px-3 py-1 bg-primary text-gray-950 rounded-full font-bold">
+        Download Resume
+      </a>
+    </div>
 
-    <main>
-        <!-- Hero Section - Simplified for Student -->
-        <section id="hero" class="pt-24 pb-16 md:pt-40 md:pb-24 text-center min-h-screen flex items-center bg-gray-950">
-            <div class="container mx-auto px-4 max-w-3xl">
-                <p class="text-primary text-lg md:text-xl font-medium mb-3">Hello, I'm AKANSHA PARLEY</p>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
-                    <span class="text-white">Aspiring</span> Software Developer
-                </h1>
-                <p class="text-gray-400 text-base md:text-xl mb-10 max-w-xl mx-auto">
-                    A dedicated 2nd Year B.Tech student (3rd Semester) exploring - Data Structures , C++, and foundational Web Development.
-                </p>
-                <a href="#assignments" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full shadow-lg text-gray-950 bg-primary hover:bg-opacity-80 transition transform hover:scale-[1.03]">
-                    View My Video Assignments
-                    <!-- SVG Arrow Right (Lucide ArrowRight) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
-        </section>
+    <button id="menu-button" class="md:hidden p-2 hover:bg-gray-800 rounded">
+      ☰
+    </button>
+  </nav>
 
-        <!-- About Me Section - Simplified -->
-        <section id="about" class="py-16 md:py-24 bg-gray-900">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Who I Am</h2>
-                
-                <div class="flex flex-col md:flex-row gap-10 items-center">
-                    
-                    <!-- Placeholder Image Card -->
-                    <div class="w-full md:w-1/3 p-6 bg-gray-800 rounded-2xl shadow-3xl transition transform hover:shadow-primary/40 duration-500">
-                        <img src="ak5.jpg" 
-                             alt="Akansha Parley Student Profile" 
-                             class="w-full h-auto rounded-xl mb-4 object-cover border-4 border-primary/50 grayscale hover:grayscale-0 transition duration-500" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2937/00e6e6?text=Student+Photo';">
-                        <div class="text-center">
-                            <h3 class="text-2xl font-bold text-white">Akansha Parley</h3>
-                            <p class="text-primary text-base">B.Tech | Computer Science with specialization AIDS</p>
-                        </div>
-                    </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+    <div class="flex flex-col items-center p-4 space-y-2">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#assignments">Assignments</a>
+    </div>
+  </div>
+</header>
 
-                    <!-- Text Content -->
-                    <div class="w-full md:w-2/3 space-y-6 text-gray-300">
-                        <p>
-                            Hi, I’m Akansha Parley.
-I’m currently pursuing a B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Data Science at Graphic Era Hill University. I have a strong interest in web development technologies and enjoy exploring how modern tools and frameworks can be used to build creative, efficient, and user-friendly digital experiences. I’m passionate about continuously learning and applying new skills to grow as a developer and technologist.
-                        </p>
-                        <p class="border-l-4 border-primary pl-4 py-1 text-gray-200 italic">
-                            "Committed to learning, focused on fundamentals, and ready to code the future."
-                        </p>
-                        <a href="#assignments" class="inline-block mt-4 text-primary font-bold hover:text-accent transition transform hover:translate-x-1">
-                            Check out my academic work &rarr;
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<main>
 
-        <!-- Education Section (Replacing Experience Timeline) -->
-        <section id="education" class="py-16 md:py-24 bg-gray-950">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Education & Coursework</h2>
+<!-- HERO -->
+<section id="hero" class="min-h-screen flex items-center justify-center text-center">
+  <div class="max-w-3xl px-4">
+    <p class="text-primary text-lg mb-3">Hello, I'm AKANSHA PARLEY</p>
+    <h1 class="text-5xl font-extrabold mb-6">
+      Aspiring Software Developer
+    </h1>
+    <p class="text-gray-400 mb-8">
+      2nd Year B.Tech student (4th Semester) exploring Data Structures, C++ and Web Development.
+    </p>
+    <a href="#assignments" class="px-8 py-3 bg-primary text-gray-950 font-bold rounded-full">
+      View My Assignments
+    </a>
+  </div>
+</section>
 
-                <div class="bg-gray-900 p-8 rounded-xl shadow-3xl border-t-4 border-primary space-y-6">
-                    <!-- School/University -->
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-700 pb-4">
-                        <h3 class="text-2xl font-bold text-primary">University of Technology</h3>
-                        <p class="text-lg text-gray-300 font-medium">B.Tech - Computer Science with speciaization AIDS</p>
-                    </div>
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-4xl font-bold text-center mb-12">Who I Am</h2>
 
-                    <!-- Details -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-400">
-                        <div>
-                            <p class="font-semibold text-white">Duration:</p>
-                            <p>2024 - 2028 (Expected)</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-white">Current Status:</p>
-                            <p>2nd Year, 3rd Semester</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-white">Core Focus (3rd Sem):</p>
-                            <p>Data Structures, C++, Digital Logic</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Key Modules -->
-                    <div class="pt-4">
-                        <p class="font-semibold text-white mb-2">Key Modules Studied:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">C/C++ Programming</span>
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Data Structures</span>
-                            <!-- <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Discrete Mathematics</span> -->
-                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm">Intro to Web (HTML/CSS)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="flex flex-col md:flex-row gap-10 items-center">
+      <div class="md:w-1/3 bg-gray-800 p-6 rounded-xl">
+        <img src="ak5.jpg"
+             onerror="this.src='https://placehold.co/400x400/1f2937/00e6e6?text=Student+Photo'"
+             class="rounded-xl mb-4 border-4 border-primary/50">
+        <h3 class="text-xl font-bold text-center">Akansha Parley</h3>
+        <p class="text-primary text-center text-sm">
+          B.Tech | CSE (AIDS)
+        </p>
+      </div>
 
-        <!-- Skills Section - Simplified and focused on fundamentals -->
-        <section id="skills" class="py-16 md:py-24 bg-gray-900">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Foundational Skills</h2>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Skill Card 1 - C++ -->
-                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl text-center border-b-4 border-primary transition transform hover:scale-[1.05] duration-300 ease-in-out hover:shadow-primary/40">
-                        <!-- SVG Terminal Icon (Lucide Terminal) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-primary mx-auto mb-3"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
-                        <p class="font-semibold text-lg">C / C++</p>
-                        <p class="text-xs text-gray-400">Core Programming</p>
-                    </div>
+      <div class="md:w-2/3 text-gray-300 space-y-4">
+        <p>
+          I am pursuing B.Tech in Computer Science with specialization in
+          Artificial Intelligence and Data Science at Graphic Era Hill University.
+          I enjoy learning web development and modern technologies.
+        </p>
+        <p class="italic border-l-4 border-primary pl-4">
+          "Committed to learning, focused on fundamentals, and ready to code the future."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- Skill Card 2 - DSA -->
-                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl text-center border-b-4 border-primary transition transform hover:scale-[1.05] duration-300 ease-in-out hover:shadow-primary/40">
-                        <!-- SVG Boxes Icon (Lucide Boxes) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-primary mx-auto mb-3"><path d="M7 10.9V4.1a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6.8"/><path d="M12 2v20"/><path d="M17 13.1v6.8a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-6.8"/></svg>
-                        <p class="font-semibold text-lg">Data Structures (DSA)</p>
-                        <p class="text-xs text-gray-400">Algorithms & Logic</p>
-                    </div>
-                    
-                    <!-- Skill Card 3 - Python -->
-                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl text-center border-b-4 border-primary transition transform hover:scale-[1.05] duration-300 ease-in-out hover:shadow-primary/40">
-                        <!-- SVG Txt Icon (Lucide Txt) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-primary mx-auto mb-3"><path d="M12 2v20"/><path d="M10 4h4"/><path d="M10 20h4"/></svg>
-                        <p class="font-semibold text-lg">Python</p>
-                        <p class="text-xs text-gray-400">Scripting & Basics</p>
-                    </div>
+<!-- ASSIGNMENTS (PDFs) -->
+<section id="assignments" class="py-20 bg-gray-950">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-4xl font-bold text-center mb-12">
+      Academic Assignments (PDF)
+    </h2>
 
-                    <!-- Skill Card 4 - Web Basics -->
-                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl text-center border-b-4 border-primary transition transform hover:scale-[1.05] duration-300 ease-in-out hover:shadow-primary/40">
-                        <!-- SVG Globe Icon (Lucide Globe) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-primary mx-auto mb-3"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                        <p class="font-semibold text-lg">HTML, CSS, JS</p>
-                        <p class="text-xs text-gray-400">Web Fundamentals</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Assignments Section (Replacing Projects) - Focus on 5 Video Assignments -->
-        <section id="assignments" class="py-16 md:py-24 bg-gray-950">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Video Assignments & Demos</h2>
-                <!-- Updated description to reflect self-upload/non-YouTube/Vimeo focus -->
-                <p class="text-center text-gray-400 max-w-2xl mx-auto mb-10">
-                    A collection of 4 video demonstrations and conceptual explanations created as part of the 3rd semester coursework.
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    
-                    <!-- Video Assignment 1 (Linked List) -->
-                    <div class="bg-gray-900 rounded-xl shadow-3xl overflow-hidden group hover:shadow-primary/50 transition duration-500 ease-in-out border border-gray-800">
-                        <div class="video-placeholder rounded-t-xl">
-                            <!-- NOTE: Replace the src with your video URL (e.g., a link to your hosted MP4 or an embed link from a service like Vimeo/Streamable) -->
-                            <iframe src="ak1.mp4" allowfullscreen title="Video 1: SELF INTRODUCTION"></iframe>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2 text-primary">1.SELF INTRODUCTION</h3>
-                            <p class="text-gray-300 mb-3 text-sm">
-                                
-                            </p>
-                            <!-- Updated tags background and text color -->
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <!-- <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">DSA</span>
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">C++</span> -->
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">3rd Sem</span>
-                            </div>
-                        </div>
-                    </div>
+    <div class="space-y-12">
 
-                    <!-- Video Assignment 2 (Sorting Analysis) -->
-                    <div class="bg-gray-900 rounded-xl shadow-3xl overflow-hidden group hover:shadow-primary/50 transition duration-500 ease-in-out border border-gray-800">
-                        <div class="video-placeholder rounded-t-xl">
-                            <!-- NOTE: Replace the src with your video URL -->
-                            <iframe src="ak2.mp4" allowfullscreen title="Video 2: SWOC"></iframe>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2 text-primary">2. SWOC</h3>
-                            <p class="text-gray-300 mb-3 text-sm">
-                                <!-- Visual explanation and theoretical analysis of the best, worst, and average case time complexities for Bubble Sort. -->
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <!-- <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">Algorithms</span>
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">Analysis</span>
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">Python</span> -->
-                            </div>
-                        </div>
-                    </div>
+      <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+        <h3 class="text-2xl font-bold text-primary mb-4">Assignment 1</h3>
+        <iframe src="Scan document2026-02-01.pdf"
+                class="w-full h-[600px] rounded border border-gray-700"></iframe>
+        <a href="Scan document2026-02-01.pdf" download
+           class="inline-block mt-4 px-6 py-2 bg-primary text-gray-950 font-bold rounded-full">
+          Download PDF
+        </a>
+      </div>
 
-                    <!-- Video Assignment 3 (Web Form) -->
-                    <div class="bg-gray-900 rounded-xl shadow-3xl overflow-hidden group hover:shadow-primary/50 transition duration-500 ease-in-out border border-gray-800">
-                        <div class="video-placeholder rounded-t-xl">
-                            <!-- NOTE: Replace the src with your video URL -->
-                            <iframe src="ak3.mp4" allowfullscreen title="Video 3: Generative AI"></iframe>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2 text-primary">3. Generative AI</h3>
-                            <!-- <p class="text-gray-300 mb-3 text-sm">
-                                Demonstration of a simple contact form, highlighting client-side validation using basic JavaScript.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">Web Dev</span>
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">JavaScript</span>
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">Front-end</span>
-                            </div> -->
-                        </div>
-                    </div>
+      <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+        <h3 class="text-2xl font-bold text-primary mb-4">
+          Assignment 2 – AI Spectrum
+        </h3>
+        <iframe src="AI Spectrum.pdf"
+                class="w-full h-[600px] rounded border border-gray-700"></iframe>
+        <a href="AI Spectrum.pdf" download
+           class="inline-block mt-4 px-6 py-2 bg-primary text-gray-950 font-bold rounded-full">
+          Download PDF
+        </a>
+      </div>
 
-                    <!-- Video Assignment 4 (Searching) -->
-                    <div class="bg-gray-900 rounded-xl shadow-3xl overflow-hidden group hover:shadow-primary/50 transition duration-500 ease-in-out border border-gray-800">
-                        <div class="video-placeholder rounded-t-xl">
-                            <!-- NOTE: Replace the src with your video URL -->
-                            <iframe src="ak4.mp4" allowfullscreen title="Video 4: JAM"></iframe>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2 text-primary">4. JAM</h3>
-                            <!-- <p class="text-gray-300 mb-3 text-sm">
-                                Comparative visual demo showing the efficiency differences between two fundamental searching algorithms.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">DSA</span>
-                                <span class="bg-primary/20 text-primary font-medium px-2 py-0.5 rounded-full">C++</span>
-                            </div> -->
-                        </div>
-                    </div>
+    </div>
+  </div>
+</section>
 
-            </div>
-        </section>
+<!-- EDUCATION -->
+<section id="education" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4 max-w-4xl text-center">
+    <h2 class="text-4xl font-bold mb-6">Education</h2>
+    <p class="text-gray-400">
+      B.Tech – Computer Science (AI & Data Science) <br>
+      2024 – 2028 (Expected) <br>
+      Currently in 4th Semester
+    </p>
+  </div>
+</section>
 
-    </main>
+<!-- SKILLS -->
+<section id="skills" class="py-20 bg-gray-950">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
 
-    <!-- Footer - Now the main place for contact info -->
-    <footer class="bg-gray-950 py-8 border-t border-gray-800">
-        <div class="container mx-auto px-4 text-center text-gray-500">
-            <p class="mb-4">Akansha Parley | Student Portfolio</p>
-            <div class="flex justify-center space-x-6">
-                <!-- Links simplified for a student -->
-                <a href="#" class="text-gray-400 hover:text-primary transition" aria-label="GitHub">
-                    <!-- SVG GitHub Icon (Lucide Github) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c.5-.4 1-.8 1.5-1.5s.8-1.5.8-2.5c0-1-.3-1.8-.8-2.5.2-.4.4-1 .6-1.8.1-.5.1-1-.1-1.5l-.2-.6s-.5-.2-1.5-.2c-.8 0-1.5.2-2 .4l-1 .3c-.8-.2-1.6-.3-2.4-.3s-1.6.1-2.4.3l-1-.3c-.5-.2-1.2-.4-2-.4s-1.3.2-1.5.2l-.2.6c-.2.5-.2 1-.1 1.5.2.8.4 1.4.6 1.8-.5.7-.8 1.5-.8 2.5 0 1 .3 2 .8 2.5.5.7 1 1.1 1.5 1.5a4.8 4.8 0 0 0-1 3.2v4"/></svg>
-                </a>
-                <a href="mailto:alex@example.com" class="text-gray-400 hover:text-primary transition" aria-label="Email">
-                    <!-- SVG Mail Icon (Lucide Mail) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-gray-800 p-6 rounded-xl">C / C++</div>
+      <div class="bg-gray-800 p-6 rounded-xl">DSA</div>
+      <div class="bg-gray-800 p-6 rounded-xl">Python</div>
+      <div class="bg-gray-800 p-6 rounded-xl">HTML / CSS / JS</div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // JavaScript for mobile menu toggle
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
+</main>
 
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+<footer class="bg-gray-950 border-t border-gray-800 py-6 text-center text-gray-500">
+  <p>© Akansha Parley | Student Portfolio</p>
+</footer>
 
-        // Close the menu when a link is clicked on mobile
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+<script>
+  const btn = document.getElementById("menu-button");
+  const menu = document.getElementById("mobile-menu");
+  btn.onclick = () => menu.classList.toggle("hidden");
+</script>
 
-        // Simple scroll spy to highlight active link (optional, but good practice)
-        const sections = document.querySelectorAll('main section');
-        const navLinks = document.querySelectorAll('header nav a');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.3
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    // Remove primary color from all links
-                    navLinks.forEach(link => {
-                        link.classList.remove('text-primary');
-                        link.classList.add('hover:text-primary');
-                    });
-                    // Add primary color to the current section's link
-                    const currentLink = document.querySelector(`header nav a[href="#${id}"]`);
-                    if (currentLink) {
-                         // Only apply for non-button links
-                        if (!currentLink.classList.contains('bg-primary')) {
-                             currentLink.classList.remove('hover:text-primary');
-                             currentLink.classList.add('text-primary');
-                        }
-                    }
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-    </script>
 </body>
 </html>
